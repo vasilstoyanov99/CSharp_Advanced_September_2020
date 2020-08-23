@@ -84,6 +84,8 @@ StyleCopReport.xml
 *.tlh
 *.tmp
 *.tmp_proj
+*.csproj
+*.sln
 *_wpftmp.csproj
 *.log
 *.vspscc
@@ -126,9 +128,6 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
-
-# JustCode is a .NET coding add-in
-.JustCode
 
 # TeamCity is a build add-in
 _TeamCity*
