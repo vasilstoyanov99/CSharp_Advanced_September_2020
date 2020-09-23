@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Read_Matrix", "1.ReadMatrix\1.Read_Matrix.csproj", "{EB3CFDFA-3215-4406-AB12-9D8240046606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Read_Matrix", "1.ReadMatrix\1.Read_Matrix.csproj", "{EB3CFDFA-3215-4406-AB12-9D8240046606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Print_Matrix", "2.Print_Matrix\2.Print_Matrix.csproj", "{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.Print_Matrix", "2.Print_Matrix\2.Print_Matrix.csproj", "{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Read_Jagged_Array", "3.Read_Jagged_Array\3.Read_Jagged_Array.csproj", "{0D3398A0-C7E0-40A9-845C-5CB19E100819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3398A0-C7E0-40A9-845C-5CB19E100819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3398A0-C7E0-40A9-845C-5CB19E100819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3398A0-C7E0-40A9-845C-5CB19E100819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3398A0-C7E0-40A9-845C-5CB19E100819}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
