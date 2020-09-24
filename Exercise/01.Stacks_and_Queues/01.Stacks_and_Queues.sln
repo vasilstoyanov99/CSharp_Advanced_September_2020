@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Truck_Tour", "07.Truck_T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.Simple_Text_Editor", "09.Simple_Text_Editor\09.Simple_Text_Editor.csproj", "{4E8F9C6E-9CB9-4382-9A3C-C122E83786D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.Balanced_Parenthesis", "08.Balanced_Parenthesis\08.Balanced_Parenthesis.csproj", "{59C2F639-8192-4A84-911C-2F897B76E98E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.Crossroads", "10.Crossroads\10.Crossroads.csproj", "{AFD0634A-517B-4A11-9C5A-F9A0A5D7C4B5}"
 EndProject
 Global
@@ -61,10 +59,6 @@ Global
 		{4E8F9C6E-9CB9-4382-9A3C-C122E83786D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8F9C6E-9CB9-4382-9A3C-C122E83786D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8F9C6E-9CB9-4382-9A3C-C122E83786D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59C2F639-8192-4A84-911C-2F897B76E98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59C2F639-8192-4A84-911C-2F897B76E98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59C2F639-8192-4A84-911C-2F897B76E98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59C2F639-8192-4A84-911C-2F897B76E98E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFD0634A-517B-4A11-9C5A-F9A0A5D7C4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFD0634A-517B-4A11-9C5A-F9A0A5D7C4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD0634A-517B-4A11-9C5A-F9A0A5D7C4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
