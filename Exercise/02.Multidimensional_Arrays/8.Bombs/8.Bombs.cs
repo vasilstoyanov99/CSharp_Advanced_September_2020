@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,10 +17,18 @@ namespace _8.Bombs
             {
                 int bombRow = 0;
                 int bombCol = 0;
-                bombsIndexes[0] = bombRow;
-                bombsIndexes[1] = bombCol;
+                bombRow = bombsIndexes[0];
+                bombCol = bombsIndexes[1];
                 bombsIndexes.RemoveAt(0);
-                bombsIndexes.RemoveAt(1);
+                if (bombsIndexes.Count == 1)
+                {
+                    bombsIndexes.RemoveAt(0);
+
+                }
+                else
+                {
+                    bombsIndexes.RemoveAt(1);
+                }
                 int bomb = matrix[bombRow, bombCol];
 
                 if (bomb <= 0)
