@@ -39,7 +39,7 @@ namespace _04.Cities_by_Continent_and_Country
 
             foreach (var continent in data)
             {
-                Console.WriteLine($"{continent.Key}");
+                Console.WriteLine($"{continent.Key}:");
 
                 foreach (var country in continent.Value)
                 {
