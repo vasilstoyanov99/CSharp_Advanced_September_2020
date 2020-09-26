@@ -10,17 +10,17 @@ namespace _02.Average_Student_Grades
         static void Main(string[] args)
         {
             int numberOfInputs = int.Parse(Console.ReadLine());
-            Dictionary<string, List<double>> studentsData = new Dictionary<string, List<double>>();
+            Dictionary<string, List<decimal>> studentsData = new Dictionary<string, List<decimal>>();
 
             for (int i = 0; i < numberOfInputs; i++)
             {
                 string[] studentInfo = Console.ReadLine().Split();
                 string studentName = studentInfo[0];
-                double grade = double.Parse(studentInfo[1]);
+                decimal grade = decimal.Parse(studentInfo[1]);
 
                 if (!studentsData.ContainsKey(studentName))
                 {
-                    studentsData.Add(studentName, new List<double>());
+                    studentsData.Add(studentName, new List<decimal>());
                     studentsData[studentName].Add(grade);
                 }
                 else
