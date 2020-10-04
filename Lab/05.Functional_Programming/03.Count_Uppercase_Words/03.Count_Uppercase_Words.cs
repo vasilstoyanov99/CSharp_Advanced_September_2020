@@ -27,12 +27,7 @@ namespace _03.Count_Uppercase_Words
 
         static bool CheckIfWordStartsWithUppercase(string word)
         {
-            if (char.IsLetter(word[0]))
-            {
-                return char.IsUpper(word[0]);
-            }
-
-            return false;
+            return char.IsUpper(word[0]);
         }
     }
 }
