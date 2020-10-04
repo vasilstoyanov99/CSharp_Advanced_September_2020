@@ -23,12 +23,12 @@ namespace _05.Filter_By_Age
             string condition = Console.ReadLine();
             int ageToSort = int.Parse(Console.ReadLine());
             string format = Console.ReadLine();
-            Func<Person, bool> sortByDelegate = SortBy(condition, ageToSort);
+            Func<Person, bool> conditionDelegate = SortBy(condition, ageToSort);
             Action<Person> printerDelegate = PrintResults(format);
 
             foreach (var person in peopleData)
             {
-                if (sortByDelegate(person))
+                if (conditionDelegate(person))
                 {
                     printerDelegate(person);
                 }
