@@ -13,14 +13,9 @@ namespace _04.Find_Evens_or_Odds
             string type = Console.ReadLine();
             Predicate<int> checker = IsNumberEven;
 
-            switch (type)
+            if (type == "odd")
             {
-                case "even":
-                    checker = IsNumberEven;
-                    break;
-                case "odd":
-                    checker = IsNumberOdd;
-                    break;
+                checker = IsNumberOdd;
             }
 
             for (int currNumber = start; currNumber <= end; currNumber++)
