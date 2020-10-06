@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.Applied_Arithmetics", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.Reverse_And_Exclude", "06.Reverse_And_Exclude\06.Reverse_And_Exclude.csproj", "{1A6FA606-E6D2-4957-85C4-48BD0915EBA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Predicate_For_Names", "07.Predicate_For_Names\07.Predicate_For_Names.csproj", "{12D894BF-EED9-4770-8EF3-044382442DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Predicate_For_Names", "07.Predicate_For_Names\07.Predicate_For_Names.csproj", "{12D894BF-EED9-4770-8EF3-044382442DE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.List_Of_Predicates", "09.List_Of_Predicates\09.List_Of_Predicates.csproj", "{5F1579B2-F6EF-4E43-BA8D-3FCC9B36987F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.List_Of_Predicates", "09.List_Of_Predicates\09.List_Of_Predicates.csproj", "{5F1579B2-F6EF-4E43-BA8D-3FCC9B36987F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
