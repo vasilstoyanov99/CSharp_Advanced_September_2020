@@ -6,14 +6,21 @@ namespace CarManufacturer
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
-            car.Make = "Tesla";
-            car.Model = "S";
-            car.Year = 2019;
-            car.FuelQuantity = 2000;
-            car.FuelConsumption = 10;
-            car.Drive(100);
-            Console.WriteLine(car.WhoAmI());
+            string make = Console.ReadLine();
+            string model = Console.ReadLine();
+            int year = int.Parse(Console.ReadLine());
+            double fuelQuantity = double.Parse(Console.ReadLine());
+            double fuelConsumption = double.Parse(Console.ReadLine());
+            Car firstCar = new Car();
+            Car secondCar = new Car(make, model, year);
+            Car thirdCar = new Car(make, model, year, fuelQuantity, fuelConsumption);
+
+            //Console.WriteLine(firstCar.WhoAmI());
+            //Console.WriteLine(new string('-', 10));
+            //Console.WriteLine(secondCar.WhoAmI());
+            //Console.WriteLine(new string('-', 10));
+            //Console.WriteLine(thirdCar.WhoAmI());
+            //Console.WriteLine(new string('-', 10));
         }
     }
 }
