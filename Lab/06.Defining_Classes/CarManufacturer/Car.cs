@@ -12,6 +12,8 @@ namespace CarManufacturer
         public int Year { get; set; }
         public double FuelQuantity { get; set; }
         public double FuelConsumption { get; set; }
+        public Engine Engine { get; set; }
+        public Tire[] Tires { get; set; }
 
         public Car()
         {
@@ -29,10 +31,18 @@ namespace CarManufacturer
             Year = year;
         }
 
-        public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption) :this(make, model, year)
+        public Car(string make, string model, int year, 
+            double fuelQuantity, double fuelConsumption) :this(make, model, year)
         {
             FuelQuantity = fuelQuantity;
             FuelConsumption = fuelConsumption;
+        }
+
+        public Car(string make, string model, int year, double fuelQuantity, 
+            double fuelConsumption, Engine engine, Tire[] tires)
+        {
+            Engine = engine;
+            Tires = tires;
         }
 
         public void Drive(double distance)
