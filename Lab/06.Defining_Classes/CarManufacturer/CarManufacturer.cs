@@ -10,10 +10,10 @@ namespace CarManufacturer
             car.Make = "Tesla";
             car.Model = "S";
             car.Year = 2019;
-
-            Console.WriteLine($"Make: {car.Make}");
-            Console.WriteLine($"Model: {car.Model}");
-            Console.WriteLine($"Year: {car.Year}");
+            car.FuelQuantity = 2000;
+            car.FuelConsumption = 10;
+            car.Drive(100);
+            Console.WriteLine(car.WhoAmI());
         }
     }
 }
