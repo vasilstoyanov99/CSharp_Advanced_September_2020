@@ -15,12 +15,12 @@ namespace CarManufacturer
             Car secondCar = new Car(make, model, year);
             Car thirdCar = new Car(make, model, year, fuelQuantity, fuelConsumption);
 
-            //Console.WriteLine(firstCar.WhoAmI());
-            //Console.WriteLine(new string('-', 10));
-            //Console.WriteLine(secondCar.WhoAmI());
-            //Console.WriteLine(new string('-', 10));
-            //Console.WriteLine(thirdCar.WhoAmI());
-            //Console.WriteLine(new string('-', 10));
+            Console.WriteLine(firstCar.WhoAmI());
+            Console.WriteLine(new string('-', 10));
+            Console.WriteLine(secondCar.WhoAmI());
+            Console.WriteLine(new string('-', 10));
+            Console.WriteLine(thirdCar.WhoAmI());
+            Console.WriteLine(new string('-', 10));
         }
     }
 }
