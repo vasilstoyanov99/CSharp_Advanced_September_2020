@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace CarManufacturer
@@ -12,50 +13,29 @@ namespace CarManufacturer
         public int Year { get; set; }
         public double FuelQuantity { get; set; }
         public double FuelConsumption { get; set; }
+        public double tiresPressureSum { get; set; }
         public Engine Engine { get; set; }
         public Tire[] Tires { get; set; }
-
-        public Car()
-        {
-            Make = "VW";
-            Model = "Golf";
-            Year = 2025;
-            FuelQuantity = 200;
-            FuelConsumption = 10;
-        }
-
-        public Car(string make, string model, int year): this()
-        {
-            Make = make;
-            Model = model;
-            Year = year;
-        }
-
-        public Car(string make, string model, int year, 
-            double fuelQuantity, double fuelConsumption) :this(make, model, year)
-        {
-            FuelQuantity = fuelQuantity;
-            FuelConsumption = fuelConsumption;
-        }
 
         public Car(string make, string model, int year, double fuelQuantity, 
             double fuelConsumption, Engine engine, Tire[] tires)
         {
+            Make = make;
+            Model = model;
+            Year = year;
+            FuelQuantity = fuelQuantity;
+            FuelConsumption = fuelConsumption;
             Engine = engine;
             Tires = tires;
         }
 
         public void Drive(double distance)
         {
-            double neededFuelForTheTrip = distance * FuelConsumption;
+            double neededFuelForTheTrip = (distance * FuelConsumption) / 100.00;
 
             if (FuelQuantity - neededFuelForTheTrip > 0)
             {
                 FuelQuantity -= neededFuelForTheTrip;
-            }
-            else
-            {
-                Console.WriteLine("Not enough fuel to perform this trip!");
             }
         }
 
@@ -63,5 +43,15 @@ namespace CarManufacturer
         {
             return $"Make: {Make}\nModel: {Model}\nYear: {Year}\nFuel: {FuelQuantity:F2}L";
         } 
+
+        public void GetAllTiresPressureSum()
+        {
+            tiresPressureSum = 0.00;
+
+            foreach (var currTire in Tires)
+            {
+                tiresPressureSum += currTire.Pressure;
+            }
+        }
     }
 }
