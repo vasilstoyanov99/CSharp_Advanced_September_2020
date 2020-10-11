@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 
 namespace _02.Custom_Doubly_Linked_List
 {
@@ -13,9 +14,20 @@ namespace _02.Custom_Doubly_Linked_List
                 list.AddHead(new Node(i));
             }
 
+            for (int i = -5; i <= 0; i++)
+            {
+                list.AddLast(new Node(i));
+            }
+
             list.PrintList();
             Console.WriteLine(new string('-', 10));
-            list.PrintListReverse();
+
+            list.RemoveFirst();
+            list.RemoveFirst();
+            list.RemoveLast();
+            list.RemoveLast();
+            list.PrintList();
+
         }
     }
 }

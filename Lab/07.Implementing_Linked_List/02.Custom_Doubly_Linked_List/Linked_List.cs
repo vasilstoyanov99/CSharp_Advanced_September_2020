@@ -9,30 +9,71 @@ namespace _02.Custom_Doubly_Linked_List
         public Node Head { get; set; }
         public Node Tail { get; set; }
 
-        public void AddHead(Node node)
+        public void AddHead(Node newHead)
         {
             if (Head == null)
             {
-                Head = node;
-                Tail = node;
+                Head = newHead;
+                Tail = newHead;
             }
             else
             {
-                node.Next = Head;
-                Head.Previous = node;
-                Head = node;
+                newHead.Next = Head;
+                Head.Previous = newHead;
+                Head = newHead;
             }
+        }
+
+        public void AddLast(Node newTail)
+        {
+            if (Tail == null)
+            {
+                Tail = newTail;
+                Head = newTail;
+            }
+            else
+            {
+                newTail.Previous = Tail;
+                Tail.Next = newTail;
+                Tail = newTail;
+            }
+        }
+
+        public void ForEach(Action<Node> action)
+        {
+            Node currNode = Head;
+
+            while (currNode != null)
+            {
+                action(currNode);
+                currNode = currNode.Next;
+            }
+        }
+
+        public Node RemoveFirst()
+        {
+            Node oldHead = Head;
+            Head = Head.Next;
+            Head.Previous = null;
+            return oldHead;
+        }
+
+        public Node RemoveLast()
+        {
+            Node oldTail = Tail;
+            Tail = Tail.Previous;
+            Tail.Next = null;
+            return oldTail;
+        }
+
+        public int Peek()
+        {
+            return Head.Value;
         }
 
         public void PrintList()
         {
-            Node currentNode = Head;
-
-            while (currentNode != null)
-            {
-                Console.WriteLine(currentNode.Value);
-                currentNode = currentNode.Next;
-            }
+            ForEach(node => Console.WriteLine(node.Value));
         }
 
         public void PrintListReverse()
@@ -44,6 +85,13 @@ namespace _02.Custom_Doubly_Linked_List
                 Console.WriteLine(currNode.Value);
                 currNode = currNode.Previous;
             }
+        }
+
+        public Node[] ToArray()
+        {
+            List<Node> list = new List<Node>();
+            this.ForEach(node => list.Add(node));
+            return list.ToArray();
         }
     }
 }
