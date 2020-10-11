@@ -11,13 +11,17 @@ namespace _02.Custom_Doubly_Linked_List
 
         public void AddHead(Node node)
         {
-            node.Next = Head;
-            Head = node;
-        }
-
-        public void AddTail(Node node)
-        {
-
+            if (Head == null)
+            {
+                Head = node;
+                Tail = node;
+            }
+            else
+            {
+                node.Next = Head;
+                Head.Previous = node;
+                Head = node;
+            }
         }
 
         public void PrintList()
@@ -28,6 +32,17 @@ namespace _02.Custom_Doubly_Linked_List
             {
                 Console.WriteLine(currentNode.Value);
                 currentNode = currentNode.Next;
+            }
+        }
+
+        public void PrintListReverse()
+        {
+            Node currNode = Tail;
+
+            while (currNode != null)
+            {
+                Console.WriteLine(currNode.Value);
+                currNode = currNode.Previous;
             }
         }
     }
