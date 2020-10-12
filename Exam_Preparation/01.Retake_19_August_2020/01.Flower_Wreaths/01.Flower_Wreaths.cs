@@ -15,7 +15,7 @@ namespace _01.Flower_Wreaths
             int storedFlowers = 0;
             int doneFlowerWreaths = 0;
 
-            while (roses.Count > 0 || lilies.Count > 0)
+            while (roses.Any() && lilies.Any())
             {
                 int rose = roses.Pop();
                 int lilie = lilies.Dequeue();
