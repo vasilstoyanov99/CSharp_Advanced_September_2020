@@ -8,67 +8,39 @@ namespace _01.Flower_Wreaths
     {
         static void Main(string[] args)
         {
-            var lilies = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-            var roses = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-            var storedFlowers = new List<int>();
+            var liliesArray = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+            var rosesArray = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+            var lilies = new Queue<int>(liliesArray);
+            var roses = new Stack<int>(rosesArray);
+            int storedFlowers = 0;
             int doneFlowerWreaths = 0;
 
-            while (true)
+            while (roses.Count > 0 || lilies.Count > 0)
             {
-                bool shoudBrake = false;
+                int rose = roses.Pop();
+                int lilie = lilies.Dequeue();
 
-                for (int lilieIndex = lilies.Count - 1; lilieIndex >= 0; lilieIndex--)
+                if (rose + lilie == 15)
                 {
-                    if (shoudBrake)
-                    {
-                        shoudBrake = false;
-                        break;
-                    }
-
-                    for (int roseIndex = 0; roseIndex < roses.Count; roseIndex++)
-                    {
-                        int rose = roses[roseIndex];
-                        int lilie = lilies[lilieIndex];
-
-                        if (rose + lilie == 15)
-                        {
-                            doneFlowerWreaths++;
-                            roses.RemoveAt(roseIndex);
-                            lilies.RemoveAt(lilieIndex);
-                        }
-                        else if (rose + lilie > 15)
-                        {
-                            lilies[lilieIndex] -= 2;
-                        }
-                        else
-                        {
-                            storedFlowers.Add(rose);
-                            storedFlowers.Add(lilie);
-                            roses.RemoveAt(roseIndex);
-                            lilies.RemoveAt(lilieIndex);
-                        }
-
-                        shoudBrake = true;
-                        break;
-                    }
-                }
-
-                if (lilies.Count == 0 && roses.Count == 0)
-                {
-                    break;
-                }
-            }
-
-            int leftFlowers = storedFlowers.Sum();
-
-            if (leftFlowers >= 15)
-            {
-                while (leftFlowers >= 15)
-                {
-                    leftFlowers -= 15;
                     doneFlowerWreaths++;
                 }
+                else if (rose + lilie > 15)
+                {
+                    while (rose + lilie > 15)
+                    {
+                        lilie -= 2;
+                    }
+
+                    doneFlowerWreaths++;
+                }
+                else if (rose + lilie < 15)
+                {
+                    storedFlowers += rose + lilie;
+                }
             }
+
+            int extraWreaths = storedFlowers / 15;
+            doneFlowerWreaths += extraWreaths;
 
             if (doneFlowerWreaths >= 5)
             {
@@ -79,5 +51,6 @@ namespace _01.Flower_Wreaths
                 Console.WriteLine($"You didn't make it, you need {5 - doneFlowerWreaths} wreaths more!");
             }
         }
+
     }
 }
