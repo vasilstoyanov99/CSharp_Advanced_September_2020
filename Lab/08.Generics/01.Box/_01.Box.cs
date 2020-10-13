@@ -1,5 +1,4 @@
-﻿using _01.Box;
-using System;
+﻿using System;
 
 namespace _BoxOfT
 {

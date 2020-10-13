@@ -1,9 +1,8 @@
-﻿using _02.Array_Creator;
-using System;
+﻿using System;
 
-namespace _StartUp
+namespace _GenericArrayCreator
 {
-    public class Program
+    public class StartUp
     {
         static void Main(string[] args)
         {

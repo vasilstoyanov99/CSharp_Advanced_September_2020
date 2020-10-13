@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _02.Array_Creator
+namespace _GenericArrayCreator
 {
    public class ArrayCreator
     {
