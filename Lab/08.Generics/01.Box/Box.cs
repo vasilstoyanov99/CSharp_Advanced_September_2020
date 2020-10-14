@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _BoxOfT
+namespace BoxOfT
 {
     public class Box<T>
     {
