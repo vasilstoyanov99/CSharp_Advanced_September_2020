@@ -20,7 +20,7 @@ namespace BoxOfT
 
         public T Remove()
         {
-           return stack.Pop();
+            return stack.Pop();
         }
     }
 }
