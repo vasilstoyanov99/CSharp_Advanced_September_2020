@@ -1,8 +1,7 @@
-﻿using __GenericScale;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace _GenericScale
+namespace GenericScale
 {
     public class StartUp
     {

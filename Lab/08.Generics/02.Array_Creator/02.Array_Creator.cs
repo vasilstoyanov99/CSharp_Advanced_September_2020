@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _GenericArrayCreator
+namespace GenericArrayCreator
 {
     public class StartUp
     {
