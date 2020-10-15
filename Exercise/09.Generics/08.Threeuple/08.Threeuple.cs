@@ -35,7 +35,6 @@ namespace _08.Threeuple
             {
                 isDrunk = true;
             }
-            
 
             Threeuple<string, int, bool> secondThreeuple = new Threeuple<string, int, bool>(name, drankBeer, isDrunk);
 
