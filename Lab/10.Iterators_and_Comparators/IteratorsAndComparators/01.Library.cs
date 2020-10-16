@@ -17,7 +17,6 @@ namespace IteratorsAndComparators
             {
                 Console.WriteLine(book.Title);
             }
-
         }
     }
 }
