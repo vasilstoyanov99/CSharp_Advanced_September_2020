@@ -12,7 +12,7 @@ namespace IteratorsAndComparators
 
         public Library(params Book[] books)
         {
-            Books = new SortedSet<Book>(books);
+            Books = new SortedSet<Book>(books, new BookComparator());
         }
 
         public IEnumerator<Book> GetEnumerator()
