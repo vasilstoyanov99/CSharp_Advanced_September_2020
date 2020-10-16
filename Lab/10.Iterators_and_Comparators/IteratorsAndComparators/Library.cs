@@ -8,12 +8,13 @@ namespace IteratorsAndComparators
 {
     public class Library : IEnumerable<Book>
     {
-        public List<Book> Books { get; set; }
+        private SortedSet<Book> Books;
 
         public Library(params Book[] books)
         {
-            Books = books.ToList();
+            Books = new SortedSet<Book>(books);
         }
+
         public IEnumerator<Book> GetEnumerator()
         {
             return new LibraryIterator(Books);
