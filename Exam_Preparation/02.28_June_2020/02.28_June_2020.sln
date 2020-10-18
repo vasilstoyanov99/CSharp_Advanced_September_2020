@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parking", "03. Parking_Skeleton\Parking\Parking\Parking.csproj", "{87099565-C3DD-4FDD-8C15-57103781D327}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Bombs", "01.Bombs\01.Bombs.csproj", "{AE579883-F4DD-4FB1-BDB3-F207B6D7C3DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Snake", "02.Snake\02.Snake.csproj", "{D12D5ABA-BA8B-43DC-B8A5-4D4615B20420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{87099565-C3DD-4FDD-8C15-57103781D327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87099565-C3DD-4FDD-8C15-57103781D327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87099565-C3DD-4FDD-8C15-57103781D327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE579883-F4DD-4FB1-BDB3-F207B6D7C3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE579883-F4DD-4FB1-BDB3-F207B6D7C3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE579883-F4DD-4FB1-BDB3-F207B6D7C3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE579883-F4DD-4FB1-BDB3-F207B6D7C3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12D5ABA-BA8B-43DC-B8A5-4D4615B20420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12D5ABA-BA8B-43DC-B8A5-4D4615B20420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12D5ABA-BA8B-43DC-B8A5-4D4615B20420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12D5ABA-BA8B-43DC-B8A5-4D4615B20420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
