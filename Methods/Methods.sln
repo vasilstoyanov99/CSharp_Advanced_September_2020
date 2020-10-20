@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Read_Matrix", "1.ReadMatr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.Print_Matrix", "2.Print_Matrix\2.Print_Matrix.csproj", "{8A5AA2C3-EC9C-45A7-8E1D-3CE66274A15B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Read_Jagged_Array", "3.Read_Jagged_Array\3.Read_Jagged_Array.csproj", "{0D3398A0-C7E0-40A9-845C-5CB19E100819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Read_Jagged_Array", "3.Read_Jagged_Array\3.Read_Jagged_Array.csproj", "{0D3398A0-C7E0-40A9-845C-5CB19E100819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Print_Jagged_Array", "4.Print_Jagged_Array\4.Print_Jagged_Array.csproj", "{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.Print_Jagged_Array", "4.Print_Jagged_Array\4.Print_Jagged_Array.csproj", "{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Read_Char_Matrix", "1.Read_Char_Matrix\1.Read_Char_Matrix.csproj", "{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
