@@ -20,7 +20,7 @@ namespace _01.Lootbox
                 int secondBoxNum = secondBox.Peek();
                 int totalSum = firstBoxNum + secondBoxNum;
 
-                if (totalSum % 2 == 0) // may have some bugs
+                if (totalSum % 2 == 0) 
                 {
                     totalClaimedSum += totalSum;
                     firstBox.Dequeue();
