@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guild", "Guild\Guild.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Lootbox", "01.Lootbox\01.Lootbox.csproj", "{276287E3-930C-4042-8758-4EF6DB94647D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Re_Volt", "02.Re_Volt\02.Re_Volt.csproj", "{A6F204B5-B71F-496D-AF5E-CD0A705E760C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{276287E3-930C-4042-8758-4EF6DB94647D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{276287E3-930C-4042-8758-4EF6DB94647D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{276287E3-930C-4042-8758-4EF6DB94647D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F204B5-B71F-496D-AF5E-CD0A705E760C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F204B5-B71F-496D-AF5E-CD0A705E760C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F204B5-B71F-496D-AF5E-CD0A705E760C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F204B5-B71F-496D-AF5E-CD0A705E760C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
