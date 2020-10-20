@@ -58,14 +58,7 @@ namespace _02.Collection
                 throw new Exception("Invalid Operation!");
             }
 
-            StringBuilder result = new StringBuilder();
-
-            foreach (T element in list)
-            {
-                result.Append(element + " ");
-            }
-
-            return result.ToString();
+            return String.Join(" ", list);
         }
 
         public IEnumerator<T> GetEnumerator()
