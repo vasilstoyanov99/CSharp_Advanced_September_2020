@@ -26,20 +26,6 @@ namespace _01.Santas_Present_Factory
                 int currMagicValue = magicValues.Peek();
                 int totalMagicLevel = currMaterial * currMagicValue;
 
-                if (currMaterial == 0 || currMagicValue == 0)
-                {
-                    if (currMaterial == 0)
-                    {
-                        materials.Pop();
-                    }
-                    else if (currMagicValue == 0)
-                    {
-                        magicValues.Dequeue();
-                    }
-
-                    continue;
-                }
-
                 switch (totalMagicLevel)
                 {
                     case 150:
@@ -71,7 +57,7 @@ namespace _01.Santas_Present_Factory
                             {
                                 materials.Pop();
                             }
-                            else if (currMagicValue == 0)
+                            if (currMagicValue == 0)
                             {
                                 magicValues.Dequeue();
                             }
