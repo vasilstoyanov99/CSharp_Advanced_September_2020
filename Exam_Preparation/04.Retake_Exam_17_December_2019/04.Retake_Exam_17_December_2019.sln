@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Christmas", "Christmas\Christmas.csproj", "{CDD61799-A2E2-4576-893E-91D724D402F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Santas_Present_Factory", "01.Santas_Present_Factory\01.Santas_Present_Factory.csproj", "{366036F8-4844-4E12-B966-076C923E66F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CDD61799-A2E2-4576-893E-91D724D402F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDD61799-A2E2-4576-893E-91D724D402F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDD61799-A2E2-4576-893E-91D724D402F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366036F8-4844-4E12-B966-076C923E66F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366036F8-4844-4E12-B966-076C923E66F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366036F8-4844-4E12-B966-076C923E66F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366036F8-4844-4E12-B966-076C923E66F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
