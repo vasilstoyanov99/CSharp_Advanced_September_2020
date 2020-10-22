@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Read_Jagged_Array", "3.Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.Print_Jagged_Array", "4.Print_Jagged_Array\4.Print_Jagged_Array.csproj", "{1E711D2D-DA30-4668-BBB4-EAA6DC85A082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Read_Char_Matrix", "1.Read_Char_Matrix\1.Read_Char_Matrix.csproj", "{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.2.Read_And_Print_Char_Matrix", "1.Read_Char_Matrix\1.2.Read_And_Print_Char_Matrix.csproj", "{A731B781-D9FE-4A96-9A24-5B7BF1ECC1F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
