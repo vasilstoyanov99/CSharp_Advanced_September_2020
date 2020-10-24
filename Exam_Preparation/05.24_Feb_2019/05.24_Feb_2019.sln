@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes", "Heroes\Heroes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Club_Party", "01.Club_Party\01.Club_Party.csproj", "{C459C3ED-7E4C-48F7-BD79-DBEB3A145B16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Tron_Racers", "02.Tron_Racers\02.Tron_Racers.csproj", "{7902AE6B-FB60-4860-B4D8-065802F4309D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C459C3ED-7E4C-48F7-BD79-DBEB3A145B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C459C3ED-7E4C-48F7-BD79-DBEB3A145B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C459C3ED-7E4C-48F7-BD79-DBEB3A145B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7902AE6B-FB60-4860-B4D8-065802F4309D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7902AE6B-FB60-4860-B4D8-065802F4309D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7902AE6B-FB60-4860-B4D8-065802F4309D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7902AE6B-FB60-4860-B4D8-065802F4309D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
