@@ -6,8 +6,7 @@ namespace PlayersAndMonsters
     {
         public static void Main(string[] args)
         {
-            BladeKnight bladeKnight = new BladeKnight("SuckDick", 69420);
-            Console.WriteLine(bladeKnight);
+
         }
     }
 }
