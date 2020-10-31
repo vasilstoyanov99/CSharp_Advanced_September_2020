@@ -6,13 +6,78 @@ namespace PersonsInfo
 {
     public class Person
     {
-        public string FirstName { get; private set; }
+        private string firstName;
+        private string lastName;
+        private int age;
+        private decimal salary;
 
-        public string LastName { get; private set; }
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+            private set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("First name cannot contain fewer than 3 symbols!");
+                }
 
-        public int Age { get; private set; }
+                firstName = value;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("Last name cannot contain fewer than 3 symbols!");
+                }
 
-        public decimal Salary { get; private set; }
+                lastName = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Age cannot be zero or a negative integer!");
+                }
+
+                age = value;
+            }
+        }
+
+        public decimal Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                if (value < 460m)
+                {
+                    throw new ArgumentException("Salary cannot be less than 460 leva!");
+                }
+
+                salary = value;
+            }
+        }
+
         public Person(string firstName, string lastName, int age, decimal salary)
         {
             FirstName = firstName;
