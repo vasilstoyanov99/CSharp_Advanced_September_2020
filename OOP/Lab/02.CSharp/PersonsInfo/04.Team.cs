@@ -34,6 +34,12 @@ namespace PersonsInfo
             persons.ForEach(p => p.IncreaseSalary(parcentage));
             persons.ForEach(p => Console.WriteLine(p.ToString()));
 
+            Team team = new Team("SoftUni");
+
+            foreach (Person person in persons)
+            {
+                team.AddPlayer(person);
+            }
         }
     }
 }
