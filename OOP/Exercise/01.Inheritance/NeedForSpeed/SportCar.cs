@@ -12,11 +12,5 @@ namespace NeedForSpeed
         {
             DefaultFuelConsumption = 10;
         }
-
-        public override void Drive(double kilometers)
-        {
-            double usedFuel = DefaultFuelConsumption * kilometers;
-            Fuel -= usedFuel;
-        }
     }
 }
