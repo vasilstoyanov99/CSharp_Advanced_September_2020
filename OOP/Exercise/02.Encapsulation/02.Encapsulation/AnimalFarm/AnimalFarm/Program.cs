@@ -9,6 +9,16 @@
             string name = Console.ReadLine();
             int age = int.Parse(Console.ReadLine());
 
+            try
+            {
+                Chicken tryTo = new Chicken(name, age);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
             Chicken chicken = new Chicken(name, age);
             Console.WriteLine(
                 "Chicken {0} (age {1}) can produce {2} eggs per day.",
