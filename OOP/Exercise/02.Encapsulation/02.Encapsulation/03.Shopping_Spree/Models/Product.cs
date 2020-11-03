@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using _03.Shopping_Spree.Models;
 
 namespace _03.Shopping_Spree
 {
@@ -8,6 +6,12 @@ namespace _03.Shopping_Spree
     {
         private string name;
         private double cost;
+
+        public Product(string name, double cost)
+        {
+            Name = name;
+            Cost = cost;
+        }
 
         public string Name
         {
@@ -17,11 +21,7 @@ namespace _03.Shopping_Spree
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Name cannot be empty");
-                }
-
+                Validators.CheckName(value);
                 name = value;
             }
         }
@@ -34,19 +34,9 @@ namespace _03.Shopping_Spree
             }
             private set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Cost cannot be negative");
-                }
-
+                Validators.CheckValue(value, nameof(Cost));
                 cost = value;
             }
-        }
-
-        public Product(string name, double cost)
-        {
-            Name = name;
-            Cost = cost;
         }
     }
 }
