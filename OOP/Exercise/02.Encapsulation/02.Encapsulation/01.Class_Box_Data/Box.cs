@@ -6,6 +6,7 @@ namespace _01.Class_Box_Data
 {
     public class Box
     {
+        private const string EXCP_MSG = "{0} cannot be zero or negative.";
         private double length;
         private double width;
         private double height;
@@ -18,11 +19,7 @@ namespace _01.Class_Box_Data
             }
             private set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Length cannot be zero or negative.");
-                }
-
+                CheckSide(value, nameof(Length));
                 length = value;
             }
         }
@@ -35,11 +32,7 @@ namespace _01.Class_Box_Data
             }
             private set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Width cannot be zero or negative.");
-                }
-
+                CheckSide(value, nameof(Width));
                 width = value;
             }
         }
@@ -52,11 +45,7 @@ namespace _01.Class_Box_Data
             }
             private set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Height cannot be zero or negative.");
-                }
-
+                CheckSide(value, nameof(Height));
                 height = value;
             }
         }
@@ -84,6 +73,23 @@ namespace _01.Class_Box_Data
         {
             double result = Length * Width * Height;
             return result;
+        }
+
+        public void CheckSide(double side, string name)
+        {
+            if (side <= 0)
+            {
+                throw new ArgumentException(String.Format(EXCP_MSG, name));
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+            result.AppendLine($"Surface Area - {CalculateTheSurfaceArea():f2}");
+            result.AppendLine($"Lateral Surface Area - {CalculateTheLateralSurfaceArea():f2}");
+            result.AppendLine($"Volume - {CalculateTheVolume():f2}");
+            return result.ToString().Trim();
         }
     }
 }
