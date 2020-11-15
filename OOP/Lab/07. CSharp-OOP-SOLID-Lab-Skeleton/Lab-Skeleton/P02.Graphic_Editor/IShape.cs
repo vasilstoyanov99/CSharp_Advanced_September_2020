@@ -6,6 +6,6 @@ namespace P02.Graphic_Editor
 {
     public interface IShape
     {
-
+        public string MyType { get; set; }
     }
 }
