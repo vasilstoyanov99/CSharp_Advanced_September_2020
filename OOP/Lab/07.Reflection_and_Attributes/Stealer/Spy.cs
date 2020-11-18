@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -52,6 +51,22 @@ namespace Stealer
             foreach (var method in classPublicMethods.Where(n => n.Name.StartsWith("set")))
             {
                 result.AppendLine($"{method.Name} have to be private!");
+            }
+
+            return result.ToString().TrimEnd();
+        }
+
+        public string RevealPrivateMethods(string className)
+        {
+            var classType = Type.GetType(className);
+            MethodInfo[] classPrivateMethods = classType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
+            StringBuilder result = new StringBuilder();
+            result.AppendLine($"All Private Methods of Class: {className}");
+            result.AppendLine($"Base Class: {classType.BaseType.Name}");
+
+            foreach (var method in classPrivateMethods)
+            {
+                result.AppendLine(method.Name);
             }
 
             return result.ToString().TrimEnd();
