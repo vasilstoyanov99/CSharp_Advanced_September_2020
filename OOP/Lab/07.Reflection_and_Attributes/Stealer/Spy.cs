@@ -71,5 +71,26 @@ namespace Stealer
 
             return result.ToString().TrimEnd();
         }
+
+        public string CollectGettersAndSetters(string className)
+        {
+            var classType = Type.GetType(className);
+            MethodInfo[] classMethod = classType.GetMethods(BindingFlags.Instance
+                | BindingFlags.Public
+                | BindingFlags.NonPublic);
+            StringBuilder result = new StringBuilder();
+
+            foreach (var method in classMethod.Where(n => n.Name.StartsWith("get")))
+            {
+                result.AppendLine($"{method.Name} will return {method.ReturnType}");
+            }
+
+            foreach (var method in classMethod.Where(n => n.Name.StartsWith("set")))
+            {
+                result.AppendLine($"{method.Name} will set field of {method.ReturnType}");
+            }
+
+            return result.ToString().TrimEnd();
+        }
     }
 }
