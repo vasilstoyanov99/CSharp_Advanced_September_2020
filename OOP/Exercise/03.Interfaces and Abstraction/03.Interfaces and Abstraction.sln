@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonInfo", "PersonInfo\Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.Telephony", "03. Telephony\03.Telephony.csproj", "{B80E8FBF-B288-46EA-ACEF-37F04507A42C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartUp", "StartUp\StartUp.csproj", "{10B8AC05-B92E-4F14-B04C-DAED6930A05D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B80E8FBF-B288-46EA-ACEF-37F04507A42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B80E8FBF-B288-46EA-ACEF-37F04507A42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B80E8FBF-B288-46EA-ACEF-37F04507A42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B8AC05-B92E-4F14-B04C-DAED6930A05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B8AC05-B92E-4F14-B04C-DAED6930A05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B8AC05-B92E-4F14-B04C-DAED6930A05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B8AC05-B92E-4F14-B04C-DAED6930A05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
