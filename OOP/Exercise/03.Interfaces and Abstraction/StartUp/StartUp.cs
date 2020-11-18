@@ -11,52 +11,64 @@ namespace StartUp
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            List<IBirthable> allIDs = new List<IBirthable>();
+            int linesOfInput = int.Parse(Console.ReadLine());
+            var allBuyers = new Dictionary<string, IBuyer>();
 
-            while (input != "End")
+            for (int i = 0; i < linesOfInput; i++)
             {
-                string[] data = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string[] data = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-                if (data[0] == "Citizen")
+                if (data.Length == 4)
                 {
-                    AddCitizenData(allIDs, data);
+                    AddCitizenData(allBuyers, data);
                 }
-                else if (data[0] == "Pet")
+                else if (data.Length == 3)
                 {
-                    AddPetData(allIDs, data);
+                    AddRebelData(allBuyers, data);
                 }
-
-                input = Console.ReadLine();
             }
 
-            string year = Console.ReadLine();
+            string secondInput = Console.ReadLine();
 
-            foreach (var obj in allIDs)
+            while (secondInput != "End")
             {
-                if (obj.Birthday.EndsWith(year))
+                string name = secondInput;
+
+                if (allBuyers.ContainsKey(name))
                 {
-                    Console.WriteLine(obj.Birthday);
+                    allBuyers[name].BuyFood();
                 }
+
+                secondInput = Console.ReadLine();
             }
+
+            int totalFoodBought = default;
+
+            foreach (var buyer in allBuyers.Values)
+            {
+                totalFoodBought += buyer.Food;
+            }
+
+            Console.WriteLine(totalFoodBought);
         }
 
-        static void AddPetData(List<IBirthable> allIDs, string[] data)
+        static void AddRebelData(Dictionary<string, IBuyer> allBuyers, string[] data)
         {
-            string name = data[1];
-            string birthday = data[2];
-            Pet pet = new Pet(name, birthday);
-            allIDs.Add(pet);
+            string name = data[0];
+            int age = int.Parse(data[1]);
+            string group = data[2];
+            Rebel rebel = new Rebel(group, name);
+            allBuyers.Add(name, rebel);
         }
 
-        static void AddCitizenData(List<IBirthable> allIDs, string[] data)
+        static void AddCitizenData(Dictionary<string, IBuyer> allBuyers, string[] data)
         {
-            string name = data[1];
-            int age = int.Parse(data[2]);
-            string id = data[3];
-            string birthday = data[4];
+            string name = data[0];
+            int age = int.Parse(data[1]);
+            string id = data[2];
+            string birthday = data[3];
             Citizen citizen = new Citizen(name, age, id, birthday);
-            allIDs.Add(citizen);
+            allBuyers.Add(name, citizen);
         }
     }
 }
