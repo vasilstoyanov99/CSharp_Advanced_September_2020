@@ -1,11 +1,8 @@
 ﻿using NUnit.Framework;
+using System;
 
 [TestFixture]
 public class DummyTests
 {
-    [Test]
-    public void Test1()
-    {
-
-    }
+   
 }
