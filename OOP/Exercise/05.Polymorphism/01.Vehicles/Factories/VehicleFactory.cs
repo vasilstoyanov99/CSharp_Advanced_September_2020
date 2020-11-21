@@ -8,17 +8,21 @@ namespace _01.Vehicles.Factories
     public class VehicleFactory
     {
         Vehicle vehicle;
-        public Vehicle CreateVehicle(string type, double fuelQuantity, double fuelConsumption)
+        public Vehicle CreateVehicle(string type, double fuelQuantity, double fuelConsumption, int tankCapacity)
         {
             try
             {
                 if (type == "Car")
                 {
-                    vehicle = new Car(fuelQuantity, fuelConsumption);
+                    vehicle = new Car(fuelQuantity, fuelConsumption, tankCapacity);
                 }
                 else if (type == "Truck")
                 {
-                    vehicle = new Truck(fuelQuantity, fuelConsumption);
+                    vehicle = new Truck(fuelQuantity, fuelConsumption, tankCapacity);
+                }
+                else if (type == "Bus")
+                {
+                    vehicle = new Bus(fuelQuantity, fuelConsumption, tankCapacity);
                 }
                 else
                 {

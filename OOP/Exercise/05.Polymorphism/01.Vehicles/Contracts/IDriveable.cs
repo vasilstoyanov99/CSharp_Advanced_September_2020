@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace _01.Vehicles.Contracts
 {
     public interface IDriveable
@@ -10,8 +7,10 @@ namespace _01.Vehicles.Contracts
 
         public double FuelConsumption { get; }
 
+        public int TankCapacity { get; }
+
         string Drive(double amount);
 
-        void Refuel(double amount);
+        void Refuel(double amount, double lossPercentage);
     }
 }

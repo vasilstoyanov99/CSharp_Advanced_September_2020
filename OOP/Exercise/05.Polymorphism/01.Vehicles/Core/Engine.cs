@@ -10,6 +10,7 @@ namespace _01.Vehicles.Core
     class Engine : IEngine
     {
         private VehicleFactory vehicleFactory;
+        private const double TRUCK_TANK_FUEL_LOSS = 0.95;
 
         public Engine()
         {
@@ -20,6 +21,7 @@ namespace _01.Vehicles.Core
 
             Vehicle car = ProcessInputData(vehicleFactory);
             Vehicle truck = ProcessInputData(vehicleFactory);
+            Vehicle bus = ProcessInputData(vehicleFactory);
             int numberOfInputs = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numberOfInputs; i++)
@@ -41,6 +43,11 @@ namespace _01.Vehicles.Core
                             case "Truck":
                                 Console.WriteLine(truck.Drive(amount));
                                 break;
+                            case "Bus":
+                                bus.IncreaseFuelConsumption();
+                                Console.WriteLine(bus.Drive(amount));
+                                bus.BringDefaultFuelConsumption();
+                                break;
                         }
                     }
                     else if (cmdType == "Refuel")
@@ -48,12 +55,19 @@ namespace _01.Vehicles.Core
                         switch (vehicleType)
                         {
                             case "Car":
-                                car.Refuel(amount);
+                                car.Refuel(amount, 1);
                                 break;
                             case "Truck":
-                                truck.Refuel(amount);
+                                truck.Refuel(amount, TRUCK_TANK_FUEL_LOSS);
+                                break;
+                            case "Bus":
+                                bus.Refuel(amount, 1);
                                 break;
                         }
+                    }
+                    else if (cmdType == "DriveEmpty")
+                    {
+                        Console.WriteLine(bus.Drive(amount));
                     }
                     else
                     {
@@ -68,6 +82,7 @@ namespace _01.Vehicles.Core
 
             Console.WriteLine(car);
             Console.WriteLine(truck);
+            Console.WriteLine(bus);
         }
 
         static Vehicle ProcessInputData(VehicleFactory vehicleFactory)
@@ -76,7 +91,8 @@ namespace _01.Vehicles.Core
             string vehicleType = cmdArgs[0];
             double fuelQuantity = double.Parse(cmdArgs[1]);
             double fuelConsumption = double.Parse(cmdArgs[2]);
-            return vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption);
+            int tankCapacity = int.Parse(cmdArgs[3]);
+            return vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption, tankCapacity);
         }
     }
 }
