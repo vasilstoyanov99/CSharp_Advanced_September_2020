@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Vehicles", "01.Vehicles\01.Vehicles.csproj", "{8C5A29D2-03D7-4E05-AEEE-03495DE749C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Raiding", "03.Raiding\03.Raiding.csproj", "{1785CD9D-5E74-4883-AA62-A54C8C8BAFAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Wild_Farm", "04.Wild_Farm\04.Wild_Farm.csproj", "{64D26EEE-E314-4C07-AFCA-468DBE0F8CE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8C5A29D2-03D7-4E05-AEEE-03495DE749C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5A29D2-03D7-4E05-AEEE-03495DE749C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5A29D2-03D7-4E05-AEEE-03495DE749C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1785CD9D-5E74-4883-AA62-A54C8C8BAFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1785CD9D-5E74-4883-AA62-A54C8C8BAFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1785CD9D-5E74-4883-AA62-A54C8C8BAFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1785CD9D-5E74-4883-AA62-A54C8C8BAFAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D26EEE-E314-4C07-AFCA-468DBE0F8CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D26EEE-E314-4C07-AFCA-468DBE0F8CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D26EEE-E314-4C07-AFCA-468DBE0F8CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D26EEE-E314-4C07-AFCA-468DBE0F8CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
