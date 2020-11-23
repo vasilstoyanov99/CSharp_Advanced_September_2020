@@ -16,7 +16,7 @@ namespace Tests
         {
             // Arrange
             int[] testArray = Enumerable.Range(1, 16).ToArray();
-            Database.Database database = new Database.Database(testArray);
+            Database database = new Database(testArray);
 
             // Act
             int expectedResult = 16;
@@ -24,15 +24,15 @@ namespace Tests
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
-        }
+        }      
 
-        [Test] 
+        [Test]
 
         public void Add_Operation_Should_Add_An_Element_At_The_Next_Free_Cell()
         {
             // Arrange
             int[] testArray = { 1 };
-            Database.Database database = new Database.Database(testArray);
+            Database database = new Database(testArray);
 
             // Act
             database.Add(2);
@@ -52,10 +52,10 @@ namespace Tests
         {
             // Arrange
             int[] testArray = Enumerable.Range(1, 16).ToArray();
-            Database.Database database = new Database.Database(testArray);
+            Database database = new Database(testArray);
 
             // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.Add(17)); 
+            Assert.Throws<InvalidOperationException>(() => database.Add(17));
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace Tests
         {
             // Arrange
             int[] testArray = { 1, 2 };
-            Database.Database database = new Database.Database(testArray);
+            Database database = new Database(testArray);
 
             // Act
             database.Remove();
@@ -83,7 +83,7 @@ namespace Tests
         public void Empty_Database_Should_Throw_Invalid_Operation_Exception_When_Using_Remove_Method()
         {
             // Arrange
-            Database.Database database = new Database.Database();
+            Database database = new Database();
 
             // Act - Assert
             Assert.Throws<InvalidOperationException>(() => database.Remove());
@@ -95,7 +95,7 @@ namespace Tests
         {
             // Arrange
             int[] expectedResult = Enumerable.Range(1, 16).ToArray();
-            Database.Database database = new Database.Database(expectedResult);
+            Database database = new Database(expectedResult);
 
             // Act
             int[] actualResult = database.Fetch();
