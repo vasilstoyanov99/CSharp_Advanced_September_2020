@@ -99,5 +99,10 @@ namespace ExtendedDatabase
             Person person = this.persons.First(p => p.Id == id);
             return person;
         }
+
+        public Person[] Fetch()
+        {
+            return this.persons.ToArray();
+        }
     }
 }

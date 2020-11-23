@@ -26,19 +26,6 @@ namespace Tests
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        //[Test] 
-
-        //public void If_Array_Size_Is_Not_16_Integers_Long_Invalid_Operation_Exception_Should_Be_Thrown()
-        //{
-        //    // Arrange
-        //    int[] testArray = { 1 };
-        //    Database.Database database;
-
-        //    // Act - Assert
-        //    Assert.Throws<InvalidOperationException>(() =>
-        //    database = new Database.Database(testArray));
-        //}
-
         [Test] 
 
         public void Add_Operation_Should_Add_An_Element_At_The_Next_Free_Cell()
