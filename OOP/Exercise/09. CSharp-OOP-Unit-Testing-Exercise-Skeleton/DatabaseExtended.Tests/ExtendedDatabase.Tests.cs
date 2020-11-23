@@ -1,246 +1,166 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using ExtendedDatabase;
 using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace Tests
 {
     public class ExtendedDatabaseTests
     {
+        private Person pesho;
+        private Person gosho;
         [SetUp]
         public void Setup()
         {
+            pesho = new Person(11223344, "Pesho");
+            gosho = new Person(55667788, "Gosho");
         }
 
         [Test]
-        public void Storing_Array_Capacity_Should_Be_Exactly_16_Integers()
+        public void ConstructorPersonShouldInitializeCollection()
         {
-            // Arrange
-            List<Person> testLsit = new List<Person>();
-            Person person;
+            Assert.IsNotNull(pesho);
+        }
+        [Test]
+        public void ConstructorExtendedDBShouldInitializeCollection()
+        {
+            var expected = new Person[] { pesho, gosho };
 
-            for (int i = 1; i <= 16; i++)
+            var db = new ExtendedDatabase.ExtendedDatabase(expected);
+
+            Assert.IsNotNull(db);
+        }
+        [Test]
+        public void TestAddRangeMoreThan15()
+        {
+            var persons = new Person[16];
+
+            Assert.Throws<ArgumentException>(() =>
             {
-                person = new Person(i, i.ToString());
-                testLsit.Add(person);
-            }
+                var db = new ExtendedDatabase.ExtendedDatabase(persons);
+            });
+        }
+        [Test]
+        public void TestAddRangeNormalConditions()
+        {
+            var persons = new Person[] { pesho, gosho };
 
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testLsit.ToArray());
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act
-            int expectedResult = 16;
-            int actualResult = database.Count;
+            int expectedCount = 2;
 
-            // Assert
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedCount, db.Count);
+        }
+        [Test]
+        public void TestShouldAddPerson()
+        {
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
+            var newPerson = new Person(123456789, "Stamat");
+            db.Add(newPerson);
+
+            int expectedCount = 3;
+
+            Assert.AreEqual(expectedCount, db.Count);
+        }
+        [Test]
+        public void AddSameUsernameShouldThrow()
+        {
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
+            var newPerson = new Person(11223344, "Gosho");
+
+            Assert.That(() => db.Add(newPerson), Throws.InvalidOperationException);
+        }
+        [Test]
+        public void AddSameIdShouldThrow()
+        {
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
+            var newPerson = new Person(11223344, "Stamat");
+
+            Assert.That(() => db.Add(newPerson), Throws.InvalidOperationException);
         }
 
         [Test]
-
-        public void Add_Operation_Should_Add_An_Element_At_The_Next_Free_Cell()
+        public void RemoveShouldRemove()
         {
-            // Arrange
-            Person testOne = new Person(1241, "asd");
-            Person expectedResult = new Person(2352, "aefesd");
-            Person[] testArray = { testOne };
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testArray);
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
+            db.Remove();
 
-            // Act
-            database.Add(expectedResult);
-            Person actualResult = database.Fetch()[1];
-            int actualCount = 2;
-            int expectedCount = database.Count;
+            var expectedCount = 1;
 
-            // Assert
-            Assert.AreEqual(expectedCount, actualCount);
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedCount, db.Count);
         }
-
         [Test]
-
-        public void Add_Operation_Should_Throw_Invalid_Operation_Exception_If_Array_Length_Is_16_Elements()
+        public void RemoveEmptyCollectionShouldThrow()
         {
-            // Arrange
-            List<Person> testLsit = new List<Person>();
-            Person person;
+            var persons = new Person[] { };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            for (int i = 1; i <= 16; i++)
-            {
-                person = new Person(i, i.ToString());
-                testLsit.Add(person);
-            }
-
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testLsit.ToArray());
-            person = new Person(17, "17");
-
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.Add(person));
+            Assert.That(() => db.Remove(), Throws.InvalidOperationException);
         }
-
         [Test]
-
-        public void Remove_Operation_Should_Support_Only_Remove_An_Element_At_The_Last_Index()
+        public void FindByUsernameExistingPersonShouldReturnPerson()
         {
-            Person expectedResult = new Person(1241, "asd");
-            Person test = new Person(2352, "aefesd");
-            Person[] testArray = { expectedResult, test };
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testArray);
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act
-            database.Remove();
-            Person actualResult = database.Fetch()[0];
-            int actualCount = 1;
-            int expectedCount = database.Count;
+            var expected = pesho;
+            var actual = db.FindByUsername("Pesho");
 
-            // Assert
-            Assert.AreEqual(expectedCount, actualCount);
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.That(actual, Is.EqualTo(expected));
         }
-
         [Test]
-
-        public void Empty_Database_Should_Throw_Invalid_Operation_Exception_When_Using_Remove_Method()
+        public void FindByUsernameNonExistingPersonShouldThrow()
         {
-            // Arrange
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase();
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.Remove());
+            Assert.That(() => db.FindByUsername("Stamat"), Throws.InvalidOperationException);
         }
-
         [Test]
-        public void If_There_Are_Already_Users_With_Same_Input_Username_Invalid_Operation_Exception_Should_Be_Thrown()
+        public void FindByUsernameNullArgumentShouldThrow()
         {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            Person sameUsernamePerson = new Person(5235353, "Test");
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.Add(sameUsernamePerson));
+            Assert.That(() => db.FindByUsername(null), Throws.ArgumentNullException);
         }
-
         [Test]
-        public void If_There_Are_Already_Users_With_Same_Input_ID_Invalid_Operation_Exception_Should_Be_Thrown()
+        public void FindByUsernameIsCaseSensitive()
         {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            Person sameIDPerson = new Person(2334534634, "TestSecond");
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.Add(sameIDPerson));
+            Assert.That(() => db.FindByUsername("GOSHO"), Throws.InvalidOperationException);
         }
-
         [Test]
-
-        public void If_Input_Username_Is_Not_In_Database_Invalid_Operation_Exception_Should_Be_Thrown()
+        public void FindByIdExistingPersonShouldReturnPerson()
         {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            string fakeUsername = "Fake";
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.FindByUsername(fakeUsername));
+            var expected = pesho;
+            var actual = db.FindById(11223344);
+
+            Assert.That(actual, Is.EqualTo(expected));
         }
-
         [Test]
-
-        public void
-            If_Input_Username_Parameter_Is_Null_Argument_Null_Exception_Should_Be_Thrown_In_Find_By_Username_Method()
+        public void FindByIdNonExistingPersonShouldThrow()
         {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            string emptyUsername = null;
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act - Assert
-            Assert.Throws<ArgumentNullException>(() => database.FindByUsername(emptyUsername));
+            Assert.That(() => db.FindById(123456789), Throws.InvalidOperationException);
         }
-
         [Test]
-
-        public void
-            Find_By_Username_Method_Should_Work_Properly_With_Case_Sensitive_Arguments()
+        public void FindByUsernameNegativeArgumentShouldThrow()
         {
-            // Arrange
-            Person expectedResult = new Person(2334534634, "Test");
-            Person expectedresult = new Person(2352235, "test");
-            ExtendedDatabase.ExtendedDatabase database =
-                new ExtendedDatabase.ExtendedDatabase(expectedResult, expectedresult);
+            var persons = new Person[] { pesho, gosho };
+            var db = new ExtendedDatabase.ExtendedDatabase(persons);
 
-            // Act
-            Person actualResult = database.FindByUsername("Test");
-            Person actualresult = database.FindByUsername("test");
-
-            // - Assert
-            Assert.AreEqual(expectedResult, actualResult);
-            Assert.AreEqual(expectedresult, actualresult);
-        }
-
-        [Test]
-
-        public void
-           If_Input_ID_Is_Not_In_Database_Invalid_Operation_Exception_Should_Be_Thrown_When_Using_Find_By_Id_Method()
-        {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            long fakeId = 5864645453;
-
-            // Act - Assert
-            Assert.Throws<InvalidOperationException>(() => database.FindById(fakeId));
-        }
-
-        [Test]
-
-        public void
-           If_Input_ID_Is_Negative_Argument_Out_Of_Range_Exception_Should_Be_Thrown_When_Using_Find_By_Id_Method()
-        {
-            // Arrange
-            Person testPerson = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(testPerson);
-            long negativeId = -5864645453;
-
-            // Act - Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => database.FindById(negativeId));
-        }
-
-        [Test]
-
-        public void
-           Find_By_Id_Method_Should_Work_Properly_With_Correct_Input_Argument()
-        {
-            // Arrange
-            Person expectedResult = new Person(2334534634, "Test");
-            ExtendedDatabase.ExtendedDatabase database = new ExtendedDatabase.ExtendedDatabase(expectedResult);
-            long correctId = 2334534634;
-
-            // Act 
-            Person actualResult = database.FindById(correctId);
-
-            // Assert
-            Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [Test]
-
-        public void Constructor_Should_Initializa_Array_Of_Person_Classes()
-        {
-            // Arrange
-            Person testOne = new Person(1241, "asd");
-            Person testTwo = new Person(2352, "aefesd");
-            ExtendedDatabase.ExtendedDatabase database = 
-                new ExtendedDatabase.ExtendedDatabase(testOne, testTwo);
-
-            // Act
-            Person[] expectedResult = { testOne, testTwo };
-            Person[] actualResult = database.Fetch().Take(2).ToArray();
-
-            // Assert
-            CollectionAssert.AreEqual(expectedResult, actualResult);
+            Assert.That(() => db.FindById(-5), Throws.Exception);
         }
     }
-}
