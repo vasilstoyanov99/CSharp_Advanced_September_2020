@@ -1,6 +1,8 @@
 ﻿using System;
 
-public class Dummy
+using FakeAxeAndDummy.Contracts;
+
+public class Dummy : IDummy
 {
     private int health;
     private int experience;

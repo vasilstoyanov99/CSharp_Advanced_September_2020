@@ -1,7 +1,8 @@
 ﻿using System;
 
-// Axe durability drop with 5 
-public class Axe
+using FakeAxeAndDummy.Contracts;
+
+public class Axe : IWeapon
 {
     private int attackPoints;
     private int durabilityPoints;
@@ -22,7 +23,7 @@ public class Axe
         get { return this.durabilityPoints; }
     }
 
-    public void Attack(Dummy target)
+    public void Attack(IDummy target)
     {
         if (this.durabilityPoints <= 0)
         {
