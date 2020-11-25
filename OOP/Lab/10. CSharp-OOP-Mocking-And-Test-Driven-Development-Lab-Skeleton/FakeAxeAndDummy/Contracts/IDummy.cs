@@ -3,7 +3,9 @@ namespace FakeAxeAndDummy.Contracts
 {
     public interface IDummy
     {
-        public int Health { get; }
+        public int Health { get; set; }
+
+        public int Experience { get; set; }
 
         public void TakeAttack(int attackPoints);
 

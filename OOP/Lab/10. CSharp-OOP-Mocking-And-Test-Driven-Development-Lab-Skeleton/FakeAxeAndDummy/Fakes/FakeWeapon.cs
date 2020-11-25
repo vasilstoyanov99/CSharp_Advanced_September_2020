@@ -5,14 +5,9 @@ namespace FakeAxeAndDummy.Fakes
 {
     public class FakeWeapon : IWeapon
     {
-        public int AttackPoints => 10;
+        public int AttackPoints { get; set; }
 
-        public int DurabilityPoints { get; private set; }
-
-        public FakeWeapon()
-        {
-            DurabilityPoints = 20;
-        }
+        public int DurabilityPoints { get; set; }
 
         public void Attack(IDummy target)
         {

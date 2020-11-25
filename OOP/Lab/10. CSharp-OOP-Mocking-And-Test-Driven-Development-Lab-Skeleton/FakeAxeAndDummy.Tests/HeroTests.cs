@@ -1,4 +1,5 @@
-﻿using FakeAxeAndDummy.Fakes;
+﻿using FakeAxeAndDummy.Contracts;
+using Moq;
 using NUnit.Framework;
 
 [TestFixture]
@@ -16,12 +17,14 @@ public class HeroTests
         ()
     {
         // Arrange
-        FakeDummy fakeDummy = new FakeDummy();
-        FakeWeapon fakeWeapon = new FakeWeapon();
-        Hero hero = new Hero("Hero", fakeWeapon);
+        Mock<IDummy> fakeDummy = new Mock<IDummy>();
+        Mock<IWeapon> fakeWeapon = new Mock<IWeapon>();
+        Hero hero = new Hero("Hero", fakeWeapon.Object);
+        fakeDummy.Setup(x => x.IsDead()).Returns(true);
+        fakeDummy.Setup(x => x.GiveExperience()).Returns(15);
 
         // Act
-        hero.Attack(fakeDummy);
+        hero.Attack(fakeDummy.Object);
         int expectedResult = 15;
         int actualResult = hero.Experience;
 

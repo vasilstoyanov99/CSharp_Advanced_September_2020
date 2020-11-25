@@ -4,19 +4,15 @@ using FakeAxeAndDummy.Contracts;
 
 public class Dummy : IDummy
 {
-    private int health;
-    private int experience;
-
     public Dummy(int health, int experience)
     {
-        this.health = health;
-        this.experience = experience;
+        Health = health;
+        Experience = experience;
     }
 
-    public int Health 
-    {
-        get { return this.health; }
-    }
+    public int Health { get; set; }
+
+    public int Experience { get; set; }
 
     public void TakeAttack(int attackPoints)
     {
@@ -25,7 +21,7 @@ public class Dummy : IDummy
             throw new InvalidOperationException("Dummy is dead.");
         }
 
-        this.health -= attackPoints;
+        Health -= attackPoints;
     }
 
     public int GiveExperience()
@@ -35,11 +31,11 @@ public class Dummy : IDummy
             throw new InvalidOperationException("Target is not dead.");
         }
 
-        return this.experience;
+        return Experience;
     }
 
     public bool IsDead()
     {
-        return this.health <= 0;
+        return Health <= 0;
     }
 }

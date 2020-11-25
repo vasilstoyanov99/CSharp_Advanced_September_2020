@@ -5,14 +5,9 @@ namespace FakeAxeAndDummy.Fakes
 {
     public class FakeDummy : IDummy
     {
-        public int Health { get; private set; }
+        public int Health { get; set; }
 
-        public int Experience => 15;
-
-        public FakeDummy()
-        {
-            Health = 5;
-        }
+        public int Experience { get; set; }
 
         public int GiveExperience() => Experience;
 
