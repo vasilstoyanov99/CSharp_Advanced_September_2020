@@ -1,11 +1,12 @@
-﻿
+﻿using _07.Military_Elite.Enumerations;
+
 namespace _07.Military_Elite.Contracts
 {
     public interface IMission
     {
         public string CodeName { get; }
 
-        public string State { get; }
+        State State { get; }
 
         void CompleteMission();
     }

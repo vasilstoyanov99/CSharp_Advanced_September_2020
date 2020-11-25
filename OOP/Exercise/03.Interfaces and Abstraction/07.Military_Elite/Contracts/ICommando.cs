@@ -2,8 +2,10 @@
 
 namespace _07.Military_Elite.Contracts
 {
-    public interface ICommando : IPrivate
+    public interface ICommando : ISpecialisedSoldier
     {
-        List<IMission> Missions { get; }
+        IReadOnlyCollection<IMission> Missions { get; }
+
+        void AddMission(IMission mission);
     }
 }

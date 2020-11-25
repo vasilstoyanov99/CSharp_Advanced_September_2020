@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _07.Military_Elite.Core.Models;
+using System;
 
 namespace StartUp
 {
@@ -6,7 +7,8 @@ namespace StartUp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }
