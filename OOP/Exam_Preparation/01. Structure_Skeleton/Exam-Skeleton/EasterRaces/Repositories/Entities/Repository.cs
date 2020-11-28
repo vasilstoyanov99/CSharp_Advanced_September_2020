@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace EasterRaces.Repositories.Entities
 {
@@ -26,7 +27,8 @@ namespace EasterRaces.Repositories.Entities
 
         public T GetByName(string name)
         {
-            return Models.Where(x => x.GetType().Name == name).FirstOrDefault();
+            return Models
+                 .FirstOrDefault(m => nameof(m).Equals(name));
         }
 
         public bool Remove(T model)
