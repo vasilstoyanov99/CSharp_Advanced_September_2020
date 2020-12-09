@@ -14,7 +14,7 @@ namespace OnlineShop
             File.Create(pathFile).Close();
 
             IReader reader = new ConsoleReader();
-            IWriter writer = new FileWriter(Path.Combine("..", "..", "..", "output.txt"));
+            IWriter writer = new ConsoleWriter();
             ICommandInterpreter commandInterpreter = new CommandInterpreter();
             IController controller = new Controller();
 

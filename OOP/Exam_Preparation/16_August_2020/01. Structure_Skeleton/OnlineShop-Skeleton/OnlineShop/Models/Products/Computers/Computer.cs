@@ -104,7 +104,7 @@ namespace OnlineShop.Models.Products.Computers
             result.AppendLine(base.ToString());
             result.AppendLine($" Components ({Components.Count}):");
 
-            if (components.Count > 0)
+            if (Components.Count > 0)
             {
                 foreach (var item in components)
                 {
@@ -114,7 +114,7 @@ namespace OnlineShop.Models.Products.Computers
 
             result.AppendLine($" Peripherals ({Peripherals.Count}); Average Overall Performance ({Peripherals.Average(x => x.OverallPerformance)}):");
 
-            if (peripherals.Count > 0)
+            if (Peripherals.Count > 0)
             {
                 foreach (var item in peripherals)
                 {
