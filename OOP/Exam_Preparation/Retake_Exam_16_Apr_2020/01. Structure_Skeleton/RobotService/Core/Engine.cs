@@ -1,4 +1,7 @@
-﻿namespace RobotService.Core
+﻿using System.IO;
+using RobotService.Core.Models;
+
+namespace RobotService.Core
 {
     using System;
 
@@ -16,7 +19,7 @@
         {
             this.writer = new Writer();
             this.reader = new Reader();
-            //this.controller = new Controller();
+            this.controller = new Controller();
         }
 
         public void Run()

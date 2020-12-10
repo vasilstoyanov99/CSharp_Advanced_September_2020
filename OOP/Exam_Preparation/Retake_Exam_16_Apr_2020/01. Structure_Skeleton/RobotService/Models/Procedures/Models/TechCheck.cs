@@ -20,6 +20,8 @@ namespace RobotService.Models.Procedures.Models
             {
                 robot.IsChecked = true;
             }
+
+            Robots.Add(robot);
         }
     }
 }

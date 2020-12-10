@@ -1,4 +1,6 @@
-﻿namespace RobotService
+﻿using System.IO;
+
+namespace RobotService
 {
     using RobotService.Core;
     using RobotService.Core.Contracts;

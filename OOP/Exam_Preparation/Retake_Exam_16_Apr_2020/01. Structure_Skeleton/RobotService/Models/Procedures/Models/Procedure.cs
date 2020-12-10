@@ -9,11 +9,11 @@ namespace RobotService.Models.Procedures.Models
 {
     public abstract class Procedure : IProcedure
     {
-        protected List<IRobot> robots { get; set; } // TODO: Check if the collection should be a field!
+        protected HashSet<IRobot> Robots { get; set; } // TODO: Check if the collection should be a field!
 
         protected Procedure()
         {
-            robots = new List<IRobot>();
+            Robots = new HashSet<IRobot>();
         }
 
         public string History()
@@ -21,7 +21,7 @@ namespace RobotService.Models.Procedures.Models
            StringBuilder result = new StringBuilder();
            result.AppendLine($"{GetType().Name}");
 
-           foreach (var robot in robots)
+           foreach (var robot in Robots)
            {
                result.AppendLine(robot.ToString());
            }

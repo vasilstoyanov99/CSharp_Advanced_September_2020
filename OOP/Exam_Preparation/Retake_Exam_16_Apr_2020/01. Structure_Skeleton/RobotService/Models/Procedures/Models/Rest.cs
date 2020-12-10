@@ -12,6 +12,7 @@ namespace RobotService.Models.Procedures.Models
             base.DoService(robot, procedureTime);
             robot.Happiness -= 3;
             robot.Energy += 10;
+            Robots.Add(robot);
         }
     }
 }

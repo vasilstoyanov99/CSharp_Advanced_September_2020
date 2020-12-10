@@ -8,7 +8,7 @@ using RobotService.Utilities.Messages;
 
 namespace RobotService.Models.Garages.Models
 {
-    public abstract class Garage : IGarage
+    public class Garage : IGarage
     {
         private const int DEF_CAPACITY = 10;
         private readonly Dictionary<string, IRobot> robots;
@@ -17,7 +17,7 @@ namespace RobotService.Models.Garages.Models
 
         public int Capacity  { get; }
 
-        protected Garage()
+        public Garage()
         {
             Capacity = DEF_CAPACITY;
             robots = new Dictionary<string, IRobot>();
@@ -25,7 +25,7 @@ namespace RobotService.Models.Garages.Models
 
         public void Manufacture(IRobot robot)
         {
-            if (robots.Count > Capacity)
+            if (robots.Count >= Capacity)
             {
                 throw new InvalidOperationException(ExceptionMessages.NotEnoughCapacity);
             }
