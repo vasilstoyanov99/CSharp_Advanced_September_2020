@@ -1,4 +1,5 @@
-﻿namespace CounterStrike
+﻿
+namespace CounterStrike
 {
     using CounterStrike.Core;
     using CounterStrike.Core.Contracts;

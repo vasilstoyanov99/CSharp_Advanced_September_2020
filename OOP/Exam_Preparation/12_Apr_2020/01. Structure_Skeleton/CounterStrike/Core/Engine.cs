@@ -1,4 +1,7 @@
-﻿namespace CounterStrike.Core
+﻿using System.IO;
+using CounterStrike.Core.Models;
+
+namespace CounterStrike.Core
 {
     using System;
 
@@ -16,7 +19,7 @@
         {
             this.writer = new Writer();
             this.reader = new Reader();
-            //this.controller = new Controller();
+            this.controller = new Controller();
         }
 
         public void Run()

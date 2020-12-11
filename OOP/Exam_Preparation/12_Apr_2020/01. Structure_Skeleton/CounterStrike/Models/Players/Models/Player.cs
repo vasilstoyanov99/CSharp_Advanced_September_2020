@@ -44,7 +44,7 @@ namespace CounterStrike.Models.Players.Models
 
             private set // TODO: Check if set should be protected
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentException(ExceptionMessages.InvalidPlayerHealth);
                 }
@@ -90,8 +90,6 @@ namespace CounterStrike.Models.Players.Models
 
         public void TakeDamage(int points)
         {
-            Armor -= points;
-
             if (Armor - points > 0)
             {
                 Armor -= points;
@@ -103,7 +101,24 @@ namespace CounterStrike.Models.Players.Models
                 Armor = 0;
             }
 
-            Health -= points;
+            if (Health - points >= 0)
+            {
+                Health -= points;
+            }
+            else
+            {
+                Health = 0;
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+            result.AppendLine($"{GetType().Name}: {Username}");
+            result.AppendLine($"--Health: {Health}");
+            result.AppendLine($"--Armor: {Armor}");
+            result.AppendLine($"--Gun: {Gun.Name}");
+            return result.ToString().TrimEnd();
         }
     }
 }
